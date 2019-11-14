@@ -4,11 +4,11 @@ export const convertArabicToRomanNumeral = (arabic: number): string => {
 
   let roman = 'I'.repeat(arabic)
 
-  if (foundFiveOf(roman, 'I')) {
+  if (hasConsectutiveOccurence(roman, 'I', 5)) {
     roman = 'V'
   }
 
-  if (foundThreeOf(roman, 'I')) {
+  if (hasConsectutiveOccurence(roman, 'I', 3)) {
     // get the last char of $roman => 'I'
     // append 'V'
     
@@ -19,13 +19,7 @@ export const convertArabicToRomanNumeral = (arabic: number): string => {
   return roman
 }
 
-function foundFiveOf(string: string, char: string) {
-  const matcher = new RegExp(`${char}${char}${char}${char}${char}`)
-  return matcher.test(string)
-}
-
-
-function foundThreeOf(string: string, char: string) {
-  const matcher = new RegExp(`${char}${char}${char}`)
-  return matcher.test(string)
+function hasConsectutiveOccurence(roman: string, char: string, consecutiveOccurenceCount: number) {
+  const matcher = new RegExp(char.repeat(consecutiveOccurenceCount))
+  return matcher.test(roman)  
 }
