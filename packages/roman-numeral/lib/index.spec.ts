@@ -1,6 +1,6 @@
 import { convertArabicToRomanNumeral } from '.'
 
-type ObjectOfStrings = { [thisIsHowICallTheKeyOfTheObject: string]: string }
+type ObjectOfStrings = { [number: number]: string }
 const expectedResults: ObjectOfStrings = {
   1: 'I',
   2: 'II',
