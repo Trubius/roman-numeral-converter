@@ -1,7 +1,10 @@
+import { convertArabicToRomanNumeral } from './index'
+
 describe('Roman numeral converter', () => {
   describe('convertArabicToRomanNumeral', () => {
     it('should work', () => {
-      throw new Error('NOT IMPLEMENTED')
+      const roman = convertArabicToRomanNumeral(123)
+      expect(roman).toBe('CXXIII')
     })
   })
 })

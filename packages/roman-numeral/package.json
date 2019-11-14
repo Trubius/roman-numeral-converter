@@ -5,10 +5,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest --config ./jest-config.js"
   },
   "devDependencies": {
     "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.7",
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
     "typescript": "^3.7.2"
