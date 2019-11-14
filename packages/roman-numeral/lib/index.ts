@@ -1,3 +1,5 @@
+type RomanDigit = 'I' | 'V' | 'X' | 'L' | 'C' | 'D' | 'M'
+
 export const convertArabicToRomanNumeral = (arabic: number): string => {
   // if found more than 3 of the same character in sequence, then 
   // only take the first of them and append a V
@@ -9,9 +11,6 @@ export const convertArabicToRomanNumeral = (arabic: number): string => {
   }
 
   if (hasConsectutiveOccurence(roman, 'I', 3)) {
-    // get the last char of $roman => 'I'
-    // append 'V'
-    
     const lastChar = Array.from(roman).pop() // => I
     roman = lastChar + 'V'
   }
@@ -19,7 +18,7 @@ export const convertArabicToRomanNumeral = (arabic: number): string => {
   return roman
 }
 
-function hasConsectutiveOccurence(roman: string, char: string, consecutiveOccurenceCount: number) {
+function hasConsectutiveOccurence(roman: string, char: RomanDigit, consecutiveOccurenceCount: number) {
   const matcher = new RegExp(char.repeat(consecutiveOccurenceCount))
   return matcher.test(roman)  
 }
