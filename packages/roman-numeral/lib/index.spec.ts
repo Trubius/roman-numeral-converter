@@ -18,7 +18,12 @@ describe('Roman numeral converter', () => {
   describe('convertArabicToRomanNumeral', () => {
     it('should convert 1..10', () => {
       for (let i = 1; i <= 10; i++) {
-        expect(convertArabicToRomanNumeral(i)).toBe(expectedResults[i])
+        try {
+          expect(convertArabicToRomanNumeral(i)).toBe(expectedResults[i])
+        } catch (err) {
+          console.error(`Failed to convert ${i}`)
+          throw err
+        }
       }
     })
 

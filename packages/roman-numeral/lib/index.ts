@@ -6,6 +6,10 @@ export const convertArabicToRomanNumeral = (arabic: number): string => {
 
   let roman = 'I'.repeat(arabic)
 
+  if (hasConsectutiveOccurence(roman, 'I', 9)) {
+    roman = 'IX'
+  }
+
   if (hasConsectutiveOccurence(roman, 'I', 5)) {
     roman = roman.replace('I'.repeat(5), 'V')
   }
