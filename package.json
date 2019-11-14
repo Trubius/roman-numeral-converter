@@ -1,0 +1,11 @@
+{
+  "name": "trubi-roman-numerals-kata",
+  "version": "0.0.1",
+  "description": "TDD practice session about roman numeral conversion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
