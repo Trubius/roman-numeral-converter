@@ -1,1 +1,3 @@
-export const convertArabicToRomanNumeral = (arabic: number) => 123
+export const convertArabicToRomanNumeral = (arabic: number): string => {
+  return 'I'
+}
