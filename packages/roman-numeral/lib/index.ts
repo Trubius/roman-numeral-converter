@@ -7,18 +7,22 @@ export const convertArabicToRomanNumeral = (arabic: number): string => {
   let roman = 'I'.repeat(arabic)
 
   if (hasConsectutiveOccurence(roman, 'I', 5)) {
-    roman = 'V'
+    roman = roman.replace('I'.repeat(5), 'V')
   }
 
-  if (hasConsectutiveOccurence(roman, 'I', 3)) {
-    const lastChar = Array.from(roman).pop() // => I
-    roman = lastChar + 'V'
+  if (hasConsectutiveOccurence(roman, 'I', 4)) {
+    roman = roman.replace('I'.repeat(4), 'IV')
   }
   
   return roman
 }
 
-function hasConsectutiveOccurence(roman: string, char: RomanDigit, consecutiveOccurenceCount: number) {
-  const matcher = new RegExp(char.repeat(consecutiveOccurenceCount))
-  return matcher.test(roman)  
+// at least 
+function hasConsectutiveOccurence(
+  romanNumeral: string,
+  romanDigit: RomanDigit, 
+  minimumConsecutiveOccurenceCount: number
+) {
+  const matcher = new RegExp(romanDigit.repeat(minimumConsecutiveOccurenceCount))
+  return matcher.test(romanNumeral)  
 }
